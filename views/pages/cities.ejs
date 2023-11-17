@@ -1,0 +1,18 @@
+<%- include('../partials/head') %>
+<%- include('../partials/header') %>
+
+<div class="container">
+    <h1>Cities</h1>
+    <% citiesArray.forEach((city)=> { %>
+        <div class="col-4">
+            <div class="card">
+                <div class="card-body">
+                    <h5 class="card-title"><%= city.city %></h5>
+                    <p><%= city["city_id SMALLINT"] %></p>
+                </div>
+            </div>
+        </div>
+    <% }) %>   
+</div>
+
+<%- include('../partials/footer') %>

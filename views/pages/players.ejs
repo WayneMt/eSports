@@ -1,0 +1,38 @@
+<%- include('../partials/head') %>
+<%- include('../partials/header') %>
+
+
+<form action="http://localhost:3000/players/add" method="post">
+    Name: <input type="text" name="name" />
+    Email: <input type="text" name="email" />
+    <button type="submit" class="btn btn-primary btn-sm">Add Player</button>
+</form> 
+
+
+<div class="container">
+    <h1>Players</h1>
+    <% playersArray.forEach((player)=> { %>
+        <div class="col-4">
+            <div class="card">
+                <div class="card-body">
+                    <h5 class="card-title"><%= player.name %></h5>
+                    <a href="/players/<%= player.player_id %>">
+                        <button type="submit" class="btn btn-primary btn-sm">Edit</button>
+                    </a>
+                </div>
+            </div>
+        </div>
+    <% }) %>   
+</div>
+
+<!-- <form action=”http://localhost:3000/countries/add” method=”post”>
+	Name: <input type=”text” name=”country_name” />
+	<button type=”submit”>Add Country</button>
+</form> -->
+
+<!-- <form action="http://localhost:3000/countries/edit/:id" method="post">
+	Name: <input type="text" name="country_name" />
+	<button type="submit" class="btn btn-primary btn-sm">Edit</button>
+</form> -->
+
+<%- include('../partials/footer') %>

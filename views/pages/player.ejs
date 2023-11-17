@@ -1,0 +1,25 @@
+<%- include('../partials/head') %>
+<%- include('../partials/header') %>
+
+<div class="container">
+    <h1>Player</h1>
+        <div class="col-4">
+            <div class="card">
+                <div class="card-body">
+                    <h5 class="card-title"><%= player.name %></h5>
+                </div>
+            </div>
+        </div>
+</div>
+
+<form action="http://localhost:3000/players/edit/<%= player.player_id %>" method="post">
+    Name: <input type="text" name="name" value="<%= player.name %>" />
+    Email: <input type="text" name="email" value="<%= player.email %>" />
+    <button type="submit" class="btn btn-primary btn-sm">Edit</button>
+</form>
+
+<form action="http://localhost:3000/players/delete/<%= player.player_id %>" method="post">
+    <button type="submit" class="btn btn-primary btn-sm">Delete</button>
+</form>
+                    
+<%- include('../partials/footer') %>

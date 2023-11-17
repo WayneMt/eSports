@@ -1,0 +1,39 @@
+<%- include('../partials/head') %>
+<%- include('../partials/header') %>
+
+    <body>
+
+        <!-- for (var i = 0; i < animals.length; i++){
+            var animal = animals[i];
+        } -->
+
+        <% animals.forEach((animal) => { %>
+            <b><%= animal.name %></b>
+            <p><%= animal.breed %></p>
+            <p><%= animal.birthYear %></p>
+            <hr/>
+            <% if (animal.alive === true) { %>
+               Hello
+            <% } else { %>
+               Goodbye
+            
+            <% } %>
+        <% }) %>
+        <b><%= motto %></b>
+
+        
+        
+        
+       
+        <!-- <% animals.forEach((animal) => { %>
+            <p><%= animal.breed %></p>
+        <% }) %>
+        <% animals.forEach((animal) => { %>
+            <p><%= animal.birthYear %></p>
+        <% }) %> -->
+        
+
+    </body>
+
+
+<%- include('../partials/footer') %>

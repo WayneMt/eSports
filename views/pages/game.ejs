@@ -1,0 +1,28 @@
+<%- include('../partials/head') %>
+<%- include('../partials/header') %>
+
+<div class="container">
+    <h1>Game</h1>
+        <div class="col-4">
+            <div class="card">
+                <div class="card-body">
+                    <h5 class="card-title"><%= game.name %></h5>
+                </div>
+            </div>
+        </div>
+</div>
+
+<form action="http://localhost:3000/games/edit/<%= game.game_id %>" method="post">
+    Name: <input type="text" name="name" value="<%= game.name %>" />
+    Duration: <input type="text" name="duration" value="<%= game.duration %>" />
+    Team Size: <input type="text" name="team_size" value="<%= game.team_size %>" />
+    <div>
+        <button type="submit" class="btn btn-primary btn-sm">Edit</button>
+    </div>
+</form>
+
+<form action="http://localhost:3000/games/delete/<%= game.game_id %>" method="post">
+    <button type="submit" class="btn btn-primary btn-sm">Delete</button>
+</form>
+                    
+<%- include('../partials/footer') %>

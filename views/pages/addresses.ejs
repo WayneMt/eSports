@@ -1,0 +1,17 @@
+<%- include('../partials/head') %>
+<%- include('../partials/header') %>
+
+<div class="container">
+    <h1>Addresses</h1>
+    <% addressesArray.forEach((address)=> { %>
+        <div class="col-4">
+            <div class="card">
+                <div class="card-body">
+                    <h5 class="card-title"><%= address.address %></h5>
+                </div>
+            </div>
+        </div>
+    <% }) %>   
+</div>
+
+<%- include('../partials/footer') %>
